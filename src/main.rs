@@ -1,3 +1,4 @@
+mod converter;
 mod downloader;
 
 use std::fs;
@@ -19,4 +20,5 @@ fn ensure_dirs() {
 fn main() {
     ensure_dirs();
     downloader::download_all("links.json", "downloaded_videos");
+    converter::convert_all_to_vr("downloaded_videos", "vr_versions", "gpu");
 }
